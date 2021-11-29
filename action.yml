@@ -10,11 +10,11 @@ inputs:
   dir:
     description: 'Working directory name on the runner'
     default: '.'
-  noteId:
+  note_id:
     description: 'Note id where the new card is created.'
-  issueTitle:
+  issue_title:
     description: 'Issue title'
-  issueBody:
+  issue_body:
     description: 'Issue body'
   x:
     description: 'X position of the new card'
