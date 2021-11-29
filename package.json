@@ -1,0 +1,14 @@
+{
+  "name": "tree-stickies-create-card-from-issue-action",
+  "version": "1.0",
+  "description": "Create card from issue",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "author": "Hidekazu Kubota",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
+  }
+}

@@ -1,0 +1,25 @@
+name: 'TreeStickies Create Card From Issue Action'
+description: 'This action create a card on your TreeStickies repository when an issue is opened.'
+inputs:
+  issue_number:
+    description: 'Issue number'
+    required: true
+  token:
+    description: 'GITHUB_TOKEN'
+    required: true
+  dir:
+    description: 'Working directory name on the runner'
+    default: '.'
+  noteId:
+    description: 'Note id where the new card is created.'
+  issueTitle:
+    description: 'Issue title'
+  issueBody:
+    description: 'Issue body'
+  x:
+    description: 'X position of the new card'
+  y:
+    description: 'Y position of the new card'
+runs:
+  using: 'node12'
+  main: 'index.js'
