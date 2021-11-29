@@ -1,7 +1,7 @@
-import * as core from '@actions/core'
-import * as github from '@actions/github'
-import { writeFileSync } from 'fs'
-import { monotonicFactory } from 'hmtid';
+const core = require('@actions/core');
+const github = require('@actions/github');
+const { writeFileSync } = require('fs');
+const { monotonicFactory } = require('hmtid');
 
 const hmtid = monotonicFactory(undefined, '-', true);
 
