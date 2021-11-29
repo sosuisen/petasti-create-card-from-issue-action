@@ -70,7 +70,7 @@ style:
   writeFileSync(`${workingDir}/note/${noteId}/c${baseId}.yml`, cardSketch);
 
   // Close the issue. Cannot delete it.
-  octokit.issues.rest.update({ ...context.repo, issue_number: issueNumber, state: 'closed' })
+  octokit.rest.issues.update({ ...context.repo, issue_number: issueNumber, state: 'closed' })
 
 
 } catch (error) {
