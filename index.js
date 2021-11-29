@@ -16,6 +16,8 @@ let geometryY = core.getInput('y');
 const octokit = github.getOctokit(token)
 const context = github.context;
 
+console.log('# issueNumber: ' + issueNumber);
+
 const getRandomInt = (min, max) => {
   // Get int value between min <= x < max
   min = Math.ceil(min);
