@@ -13,10 +13,11 @@ const issueTitle = core.getInput('issue_title');
 const issueBody = core.getInput('issue_body');
 let geometryX = core.getInput('x');
 let geometryY = core.getInput('y');
-const octokit = github.getOctokit(token)
+
+const octokit = github.getOctokit(token);
 const context = github.context;
 
-console.log('# issueNumber: ' + issueNumber);
+console.log('# token: ' + token);
 
 const getRandomInt = (min, max) => {
   // Get int value between min <= x < max
@@ -27,10 +28,10 @@ const getRandomInt = (min, max) => {
 };
 
 try {
-// Create a card
-const baseId = hmtid(Date.now());
-const date = new Date().toISOString().replace(/^(.+?)T(.+?)\..+?$/, '$1 $2');
-const cardBody = `---
+  // Create a card
+  const baseId = hmtid(Date.now());
+  const date = new Date().toISOString().replace(/^(.+?)T(.+?)\..+?$/, '$1 $2');
+  const cardBody = `---
 _id: card/c${baseId}
 date:
   createdDate: '${date}'
@@ -43,12 +44,12 @@ version: '1.0'
 
 ${issueBody}`;
 
-writeFileSync(`${workingDir}/card/c${baseId}.md`, cardBody);
+  writeFileSync(`${workingDir}/card/c${baseId}.md`, cardBody);
 
-geometryX += getRandomInt(30, 100);
-geometryY += getRandomInt(30, 100);
-const geometryZ = 0;
-const cardSketch = `_id: note/${noteId}/c${baseId}
+  geometryX += getRandomInt(30, 100);
+  geometryY += getRandomInt(30, 100);
+  const geometryZ = 0;
+  const cardSketch = `_id: note/${noteId}/c${baseId}
 condition:
   locked: false
 date:
@@ -66,10 +67,10 @@ style:
   uiColor: '#f5f5f5'
   zoom: 1
 `;
-writeFileSync(`${workingDir}/note/${noteId}/c${baseId}.yml`, cardSketch);
+  writeFileSync(`${workingDir}/note/${noteId}/c${baseId}.yml`, cardSketch);
 
-// Close the issue. Cannot delete it.
-octokit.issues.update({ ...context.repo, issue_number: issueNumber, state: 'closed' })
+  // Close the issue. Cannot delete it.
+  octokit.issues.rest.update({ ...context.repo, issue_number: issueNumber, state: 'closed' })
 
 
 } catch (error) {
