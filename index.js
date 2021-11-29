@@ -11,8 +11,8 @@ const workingDir = core.getInput('dir');
 const noteId = core.getInput('note_id');
 const issueTitle = core.getInput('issue_title');
 const issueBody = core.getInput('issue_body');
-let geometryX = core.getInput('x');
-let geometryY = core.getInput('y');
+let geometryX = parseInt(core.getInput('x'));
+let geometryY = parseInt(core.getInput('y'));
 
 const octokit = github.getOctokit(token);
 const context = github.context;
