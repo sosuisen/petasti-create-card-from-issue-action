@@ -4,10 +4,8 @@ This GitHub action creates a card on your TreeStickies data repository when an i
 
 ## Inputs
 
-### `issue_number`
 ### `issue_title`
 ### `issue_body`
-### `token`
 ### `noteId`
 ### `dir`
 ### `x`
@@ -17,6 +15,6 @@ This GitHub action creates a card on your TreeStickies data repository when an i
 ## Usage
 
 ```
-uses: actions/tree-stickies-create-card-from-issue-action@main
+uses: sosuisen/tree-stickies-create-card-from-issue-action@main
 ```
 

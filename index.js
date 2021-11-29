@@ -5,19 +5,12 @@ const { monotonicFactory } = require('hmtid');
 
 const hmtid = monotonicFactory(undefined, '-', true);
 
-const issueNumber = core.getInput('issue_number');
-const token = core.getInput('token');
 const workingDir = core.getInput('dir');
 const noteId = core.getInput('note_id');
 const issueTitle = core.getInput('issue_title');
 const issueBody = core.getInput('issue_body');
 let geometryX = parseInt(core.getInput('x'));
 let geometryY = parseInt(core.getInput('y'));
-
-const octokit = github.getOctokit(token);
-const context = github.context;
-
-console.log('# token: ' + token);
 
 const getRandomInt = (min, max) => {
   // Get int value between min <= x < max
@@ -68,10 +61,6 @@ style:
   zoom: 1
 `;
   writeFileSync(`${workingDir}/note/${noteId}/c${baseId}.yml`, cardSketch);
-
-  // Close the issue. Cannot delete it.
-  octokit.rest.issues.update({ ...context.repo, issue_number: issueNumber, state: 'closed' })
-
 
 } catch (error) {
   core.setFailed(error.message);
