@@ -41,7 +41,7 @@ version: '1.0'
 
 ${issueBody}`;
 
-writeSync(`${workingDir}/card/c${baseId}.md`, cardBody);
+writeFileSync(`${workingDir}/card/c${baseId}.md`, cardBody);
 
 geometryX += getRandomInt(30, 100);
 geometryY += getRandomInt(30, 100);
