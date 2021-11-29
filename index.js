@@ -40,7 +40,7 @@ type: text/markdown
 user: local
 version: '1.0'
 ---
-# ${issueTitle}
+${issueTitle}
 
 ${issueBody}`;
 
