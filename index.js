@@ -24,7 +24,7 @@ try {
   // Create a card
   const baseId = hmtid(Date.now());
   const date = new Date().toISOString().replace(/^(.+?)T(.+?)\..+?$/, '$1 $2');
-  const cardBody = `---
+  let cardBody = `---
 _id: card/c${baseId}
 date:
   createdDate: '${date}'
