@@ -35,7 +35,7 @@ version: '1.0'
 ---
 `;
   let title = issueTitle;
-  let body = ';';
+  let body = '';
   if (title.startsWith('[twitter]')) {
     title = title.replace(/^[twitter]/, '');
     body = `${issueBody}
@@ -49,6 +49,7 @@ ${title}`;
 
 ${issueBody}`;
   }
+  cardBody += body;
 
   writeFileSync(`${workingDir}/card/c${baseId}.md`, cardBody);
 
