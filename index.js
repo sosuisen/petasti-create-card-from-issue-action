@@ -37,7 +37,7 @@ version: '1.0'
   let title = issueTitle;
   let body = '';
   if (title.startsWith('[twitter]')) {
-    title = title.replace(/^[twitter]/, '');
+    title = title.replace(/^\[twitter\]/, '');
     body = `${issueBody}
 
 &nbsp;
