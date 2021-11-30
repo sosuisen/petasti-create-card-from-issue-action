@@ -33,9 +33,22 @@ type: text/markdown
 user: local
 version: '1.0'
 ---
-${issueTitle}
+`;
+  let title = issueTitle;
+  let body = ';';
+  if (title.startsWith('[twitter]')) {
+    title = title.replace(/^[twitter]/, '');
+    body = `${issueBody}
+
+&nbsp;
+
+${title}`;
+  }
+  else {
+    body = `${title}
 
 ${issueBody}`;
+  }
 
   writeFileSync(`${workingDir}/card/c${baseId}.md`, cardBody);
 
