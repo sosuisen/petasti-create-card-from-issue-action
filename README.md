@@ -1,4 +1,4 @@
-# tree-stickies-create-card-from-issue-action
+# petasti-create-card-from-issue-action
 
 This GitHub action creates a card on your TreeStickies data repository when an issue is opened.
 
@@ -15,6 +15,6 @@ This GitHub action creates a card on your TreeStickies data repository when an i
 ## Usage
 
 ```
-uses: sosuisen/tree-stickies-create-card-from-issue-action@main
+uses: sosuisen/petasti-create-card-from-issue-action@main
 ```
 
