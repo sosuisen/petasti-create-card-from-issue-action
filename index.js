@@ -57,8 +57,7 @@ ${issueBody}`;
   geometryY += getRandomInt(30, 100);
   const geometryZ = 0;
   const cardSketch = `_id: note/${noteId}/c${baseId}
-condition:
-  locked: false
+condition: {}
 date:
   createdDate: '${date}'
   modifiedDate: '${date}'
@@ -68,6 +67,8 @@ geometry:
   x: ${geometryX}
   'y': ${geometryY}
   z: ${geometryZ}
+label:
+  status: openedSticker
 style:
   backgroundColor: '#ffffff'
   opacity: 1
