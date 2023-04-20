@@ -68,7 +68,7 @@ geometry:
   'y': ${geometryY}
   z: ${geometryZ}
 label:
-  status: openedSticker
+  status: closedSticker
 style:
   backgroundColor: '#ffffff'
   opacity: 1
